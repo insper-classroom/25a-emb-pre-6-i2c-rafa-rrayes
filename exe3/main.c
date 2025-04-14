@@ -24,9 +24,9 @@ void i2c_task(void *p) {
     uint8_t reg_address = 0xD0;  // Registrador ID do BMP280
 
 
-     i2c_write_blocking(i2c_default, BMP280_CHIP_ADDRESS, &reg_address, 1, true);
+     i2c_write_blocking(i2c_default, I2C_CHIP_ADDRESS, &reg_address, 1, true);
 
-     i2c_read_blocking(i2c_default, BMP280_CHIP_ADDRESS, buffer, 1, false);
+     i2c_read_blocking(i2c_default, I2C_CHIP_ADDRESS, buffer, 1, false);
  
      printf("BMP280 ID: 0x%X \n", buffer[0]);
  
